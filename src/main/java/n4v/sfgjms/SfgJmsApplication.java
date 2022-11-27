@@ -19,8 +19,14 @@ public class SfgJmsApplication {
 		
 		server.start();
 		System.out.println();
+		try {
+			SpringApplication.run(SfgJmsApplication.class, args);
+		}catch (Throwable e) {
+	        if(e.getClass().getName().contains("SilentExitException")) {
+	        } else {
+	        }
+	    }
 		
-		SpringApplication.run(SfgJmsApplication.class, args);
 	}
 
 }
